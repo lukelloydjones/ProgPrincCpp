@@ -8,18 +8,45 @@ using namespace std;
 inline void keep_window_open() { char ch; cin>>ch; }
 
 
+// Safe conversions
+
 int main() {
-  int number_of_words = 0; 
-  string previous = " "; 
-  string current;
-  while (cin>>current) {
-    ++number_of_words; if (previous == current)
-    // not a word
-    // increase word count
-    cout << "word number " << number_of_words << " repeated: " << current << '\n';
-    previous = current; 
-  }
+  double d = 0; while (cin>>d) {
+    // repeat the statements below
+    // as long as we type in numbers
+    // try to squeeze a double into an int
+    // try to squeeze an int into a char
+    // get the integer value of the character
+    int i = d;
+    char c = i;
+    int i2 = c;
+    cout << "d==" << d // the original double
+  } 
 }
+
+// Always initialise your variables
+
+// // Names
+
+// int Main() {
+//   STRING s = "Goodbye, cruel world! ";
+//   cOut << S << '\n'; 
+// }
+
+// Increments
+
+// int main() {
+//   int number_of_words = 0; 
+//   string previous = " "; 
+//   string current;
+//   while (cin>>current) {
+//     ++number_of_words; if (previous == current)
+//     // not a word
+//     // increase word count
+//     cout << "word number " << number_of_words << " repeated: " << current << '\n';
+//     previous = current; 
+//   }
+// }
 
 // Starting it with empty space is interesting
 
