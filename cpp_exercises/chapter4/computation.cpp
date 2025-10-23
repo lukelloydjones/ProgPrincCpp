@@ -8,17 +8,51 @@ using namespace std;
 inline void keep_window_open() { char ch; cin>>ch; }
 
 
-// David Wheeler's program
+int square(int val) // take no argument; return no value
+{
+  int sqr = 0;
+  for (int i = 0; i < val; ++i)
+  {
+  	sqr += val;
+  }
+  return(sqr);
+ }
 
 // calculate and print a table of squares 0–99 
 int main()
 {
-	int i = 0; // start from 0 
-	while (i<100) {
-	cout << i << '\t' << pow(i, 2) << '\n';
-	++i; // increment i (that is, i becomes i+1) 
+  int i = 0; // start from 0 
+  int maxval = 100;
+  for (int i = 0; i < maxval; ++i)
+  {
+    cout << i << '\t' << square(i) << '\n';
   }
 }
+
+
+// This is a weird function reall
+
+// void write_sorry() // take no argument; return no value
+// {
+//   cout << "Sorry, I love you!\n";
+// }
+
+// int main()
+// {
+// 	write_sorry();
+// }
+
+// David Wheeler's program
+
+// calculate and print a table of squares 0–99 
+// int main()
+// {
+// 	int i = 0; // start from 0 
+// 	while (i<100) {
+// 	cout << i << '\t' << pow(i, 2) << '\n';
+// 	++i; // increment i (that is, i becomes i+1) 
+//   }
+// }
 
 // Switch statements
 //  - Can't switch on a string
