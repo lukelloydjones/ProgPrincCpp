@@ -8,26 +8,75 @@ using namespace std;
 inline void keep_window_open() { char ch; cin>>ch; }
 
 
-int square(int val) // take no argument; return no value
-{
-  int sqr = 0;
-  for (int i = 0; i < val; ++i)
-  {
-  	sqr += val;
-  }
-  return(sqr);
- }
-
-// calculate and print a table of squares 0–99 
+// simple dictionary: list of sorted words 
 int main()
 {
-  int i = 0; // start from 0 
-  int maxval = 100;
-  for (int i = 0; i < maxval; ++i)
-  {
-    cout << i << '\t' << square(i) << '\n';
-  }
+  vector<string> words; 
+  cout << "Good morning " << '\n';
+  for(string temp; cin>>temp; )
+    // read whitespace-separated words // put into vector
+    words.push_back(temp);
+    cout << "Number of words: " << words.size() << '\n';
+    sort(words.begin(), words.begin()); // sort the words
+    for (int i = 0; i<words.size(); ++i)
+      if (i==0 || words[i-1]!=words[i]) // is this a new word?
+      cout << words[i] << "\n";
 }
+
+
+
+// // compute mean and median temperatures 
+// int main()
+// {
+//   vector<double> temps;
+//   for (double temp; cin>>temp; )
+//     temps.push_back(temp);
+
+//   // compute mean temperature:
+//   double sum = 0;
+//   for (int x : temps) sum += x;
+//   cout << "Average temperature: " << sum/temps.size() << '\n';
+//   // compute median temperature:
+//   std::sort(temps.begin(), temps.end()); // sort temperatures
+//   cout << "Median temperature: " << temps[temps.size()/2] << '\n';
+// }
+
+// temperatures
+// read into temp
+// put temp into vector
+
+// Old push back
+// int main()
+// {
+//   vector<int> v = {5, 7, 9, 4, 6, 8}; 
+//   for (int x : v) // for each x in v - that is pretty nice - not sure seen that
+//   cout << x << '\n';
+// }
+
+
+// 4.6 Vectors
+
+
+// int square(int val) // take no argument; return no value
+// {
+//   int sqr = 0;
+//   for (int i = 0; i < val; ++i)
+//   {
+//   	sqr += val;
+//   }
+//   return(sqr);
+//  }
+
+// // calculate and print a table of squares 0–99 
+// int main()
+// {
+//   int i = 0; // start from 0 
+//   int maxval = 100;
+//   for (int i = 0; i < maxval; ++i)
+//   {
+//     cout << i << '\t' << square(i) << '\n';
+//   }
+// }
 
 
 // This is a weird function reall
