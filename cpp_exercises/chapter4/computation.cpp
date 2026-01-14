@@ -7,21 +7,51 @@ using namespace std;
 
 inline void keep_window_open() { char ch; cin>>ch; }
 
+// La Drill
+int main() {
+    char inputChar;
+
+    std::cout << "Enter anykey to start or 'q' to quit):" << std::endl;
+    int i1 = 0;
+    int i2 = 0;
+    // Read characters one by one
+    while (std::cin >> inputChar) {
+        if (inputChar == 'q' || inputChar == 'Q') {
+            std::cout << "Termination character detected. Exiting loop." << std::endl;
+            break; // Exit the while loop
+        }
+
+        // Process the input character (example: print it)
+        cout << "Please enter two integers:\n"; cin >> i1 >> i2;
+        cout << "Your integers are:" << i1 << " " << i2;
+    }
+
+    std::cout << "Loop terminated." << std::endl;
+    return 0;
+}
+
 
 // simple dictionary: list of sorted words 
-int main()
-{
-  vector<string> words; 
-  cout << "Good morning " << '\n';
-  for(string temp; cin>>temp; )
-    // read whitespace-separated words // put into vector
-    words.push_back(temp);
-    cout << "Number of words: " << words.size() << '\n';
-    sort(words.begin(), words.begin()); // sort the words
-    for (int i = 0; i<words.size(); ++i)
-      if (i==0 || words[i-1]!=words[i]) // is this a new word?
-      cout << words[i] << "\n";
-}
+// int main()
+// {
+//   vector<string> words; 
+//   cout << "Good morning " << '\n';
+//   string disliked = "Broccoli";
+//   for(string temp; cin>>temp; )
+//     // read whitespace-separated words // put into vector
+//     words.push_back(temp);
+//     cout << "Number of words: " << words.size() << '\n';
+//     sort(words.begin(), words.begin()); // sort the words
+//     for (int i = 0; i<words.size(); ++i)
+//       if (i==0 || words[i-1]!=words[i]) // is this a new word?
+//       if (words[i] == disliked)
+//       {
+//         cout << "BLEEP" << "\n";
+//       } 
+//       else {
+//         cout << words[i] << "\n";
+//       }
+// }
 
 
 
