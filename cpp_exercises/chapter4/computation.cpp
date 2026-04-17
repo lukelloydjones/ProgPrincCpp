@@ -3,32 +3,90 @@
 #include<vector>
 #include<algorithm>
 #include<cmath>
+#include <numeric>
 using namespace std;
 
-inline void keep_window_open() { char ch; cin>>ch; }
+// inline void keep_window_open() { char ch; cin>>ch; }
 
-// La Drill
-int main() {
-    char inputChar;
 
-    std::cout << "Enter anykey to start or 'q' to quit):" << std::endl;
-    int i1 = 0;
-    int i2 = 0;
-    // Read characters one by one
-    while (std::cin >> inputChar) {
-        if (inputChar == 'q' || inputChar == 'Q') {
-            std::cout << "Termination character detected. Exiting loop." << std::endl;
-            break; // Exit the while loop
-        }
+// Sieve of Eratosnothenas
+int main()
+{
+  int maxno = 10;
+  std::cout << "Enter some integer number " << '\n';
+  cin >> maxno; 
+  std::cout << "You have entered " << maxno << '\n';
 
-        // Process the input character (example: print it)
-        cout << "Please enter two integers:\n"; cin >> i1 >> i2;
-        cout << "Your integers are:" << i1 << " " << i2;
+  // Set out the list of primes
+  vector<int> v1(maxno, 0);
+
+  // Fixed size with default value
+  // vector<vector<int>> v1(3, vector<int>(3, 7));
+  std::cout << "Sequence of numbers " << v1.at(0) << " to " << v1.at(maxno -  1) << '\n';
+
+  int init_p = 2;
+  int sm = 0;
+  int sm_old = 0;
+  int sm_dff = 1;
+
+  while (sm_dff > 0) {
+    int cnt = init_p + init_p;
+    for (int i = 0; i < maxno; ++i)
+    {
+       v1[cnt-1] = 1;
+       cnt += init_p;
     }
 
-    std::cout << "Loop terminated." << std::endl;
-    return 0;
+    // Sum the vector and check how many were marked
+    sm = 0;
+    for (int i = 0; i < maxno; ++i)
+    {
+      sm += v1[i];
+    }
+    std::cout << "Total summed for " << init_p << " is " << sm << '\n';
+
+    // Did more get marked
+    sm_dff = sm - sm_old;
+    sm_old =  sm;  
+    // Update init p
+    init_p += 1;
+  }
+
+  // Print the final list
+   std::cout << "Primes less than  " << maxno << " are " << '\n'; 
+  for (int i = 0; i < maxno; ++i)
+  {
+    if (v1[i] == 0)
+    {
+      std::cout << i + 1 << '\n';    
+    }
+  }
+  
 }
+
+
+// // La Drill
+// int main() {
+//     char inputChar;
+
+//     std::cout << "Enter anykey to start or 'q' to quit):" << std::endl;
+//     int i1 = 0;
+//     int i2 = 0;
+//     // Read characters one by one
+//     while (std::cin >> inputChar) {
+//         if (inputChar == 'q' || inputChar == 'Q') {
+//             std::cout << "Termination character detected. Exiting loop." << std::endl;
+//             break; // Exit the while loop
+//         }
+
+//         // Process the input character (example: print it)
+//         cout << "Please enter two integers:\n"; cin >> i1 >> i2;
+//         cout << "Your integers are:" << i1 << " " << i2;
+//     }
+
+//     std::cout << "Loop terminated." << std::endl;
+//     return 0;
+// }
 
 
 // simple dictionary: list of sorted words 
